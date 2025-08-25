@@ -475,7 +475,12 @@ body {
         padding: 15px 20px;
     }
     .main-nav {
-        display: none; /* Hide for smaller screens, can be replaced by a mobile menu icon */
+        display: none; /* إخفاء في الشاشات الصغيرة، يمكن استبدالها بأيقونة قائمة للهاتف */
+    }
+    .header-actions {
+        width: 100%;
+        justify-content: space-around;
+        gap: 0;
     }
     .hero-section {
         flex-direction: column;
@@ -489,6 +494,9 @@ body {
     .hero-content h1 {
         font-size: 2.5em;
     }
+    .hero-image img {
+        max-width: 80%;
+    }
     .about-card {
         flex-direction: column;
         text-align: center;
@@ -496,6 +504,15 @@ body {
     }
     .about-image {
         order: -1;
+    }
+    .about-info ul {
+        text-align: right;
+    }
+    .courses-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 @media (max-width: 576px) {
@@ -505,11 +522,27 @@ body {
     }
     .header-actions {
         margin-top: 10px;
+        flex-direction: column;
+    }
+    .btn {
+        width: 100%;
     }
     .hero-content h1 {
         font-size: 2em;
     }
     .btn-hero {
         font-size: 1em;
+    }
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .stat-card {
+        padding: 20px;
+    }
+    .about-section, .courses-section, .stats-section, .cta-section {
+        padding: 40px 20px;
     }
 }
