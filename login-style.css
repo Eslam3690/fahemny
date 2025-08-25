@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --background-color: #f4f7f9;
+    --text-color: #333;
+    --card-bg-color: #ffffff;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+    background: linear-gradient(135deg, #1c3144 0%, #081a28 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.login-container {
+    background-color: var(--card-bg-color);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-medium);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.login-container:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+p {
+    color: #7f8c8d;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+/* Form Styling */
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: right;
+}
+
+.input-group label {
+    display: block;
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+    outline: none;
+}
+
+/* Button Styling */
+.btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .login-container {
+        padding: 2rem;
+        border-radius: 0;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم احترافية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">مدرستي</div>
+        <nav class="main-nav">
+            <a href="#dashboard" class="nav-item active"><i class="fas fa-home"></i> الرئيسية</a>
+            <a href="#courses-manager" class="nav-item"><i class="fas fa-book-open"></i> إدارة الدورات</a>
+            <a href="#students-manager" class="nav-item"><i class="fas fa-users"></i> إدارة الطلاب</a>
+        </nav>
+        <div class="user-info">
+            <span class="username">أهلاً بك، الأدمن</span>
+            <a href="loginn.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> تسجيل خروج</a>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="dashboard-header">
+            <h1 id="page-title">لوحة التحكم</h1>
+        </div>
+
+        <div class="dashboard-section" id="courses-manager">
+            <div class="section-header">
+                <h2>إدارة الدورات</h2>
+                <button id="add-course-btn" class="btn btn-primary"><i class="fas fa-plus-circle"></i> إضافة دورة</button>
+            </div>
+            <div class="data-table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>العنوان</th>
+                            <th>الوصف</th>
+                            <th>السعر</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="courses-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="dashboard-section hidden" id="students-manager">
+            <div class="section-header">
+                <h2>إدارة الطلاب</h2>
+            </div>
+            <div class="data-table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>الاسم</th>
+                            <th>هاتف الطالب</th>
+                            <th>هاتف ولي الأمر</th>
+                            <th>المحافظة</th>
+                            <th>المرحلة</th>
+                            <th>الدور</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="students-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="course-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="course-modal-title">إضافة دورة</h2>
+            <form id="course-form">
+                <input type="hidden" id="course-id">
+                <div class="input-group"><label for="course-title">العنوان</label><input type="text" id="course-title" name="title" required></div>
+                <div class="input-group"><label for="course-description">الوصف</label><textarea id="course-description" name="description"></textarea></div>
+                <div class="input-group"><label for="course-price">السعر</label><input type="number" id="course-price" name="price" required></div>
+                <div class="input-group"><label for="course-image-url">رابط الصورة</label><input type="text" id="course-image-url" name="image_url"></div>
+                <button type="submit" class="btn btn-primary" id="course-modal-submit-btn">إضافة</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="student-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="student-modal-title">تعديل طالب</h2>
+            <form id="student-form">
+                <input type="hidden" id="student-id">
+                <div class="input-group"><label for="student-username">الاسم</label><input type="text" id="student-username" name="username" required></div>
+                <div class="input-group"><label for="student-phone">هاتف الطالب</label><input type="text" id="student-phone" name="student_phone" required></div>
+                <div class="input-group"><label for="parent-phone">هاتف ولي الأمر</label><input type="text" id="parent-phone" name="parent_phone"></div>
+                <div class="input-group"><label for="governorate">المحافظة</label><input type="text" id="governorate" name="governorate"></div>
+                <div class="input-group"><label for="grade-level">المرحلة الدراسية</label><input type="text" id="grade-level" name="grade_level"></div>
+                <div class="input-group"><label for="role">الدور</label><input type="text" id="role" name="role" required></div>
+                <div class="input-group"><label for="new-password">كلمة مرور جديدة (اختياري)</label><input type="password" id="new-password" name="password"></div>
+                <button type="submit" class="btn btn-primary">حفظ التعديل</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>
